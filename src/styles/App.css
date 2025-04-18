@@ -1,0 +1,53 @@
+/* Tymout App.css - Modern minimalist WhatsApp-inspired shell */
+:root {
+  --color-bg: #111b21;
+  --color-sidebar: #202c33;
+  --color-main: #222e35;
+  --color-accent: #25d366;
+  --color-accent-fg: #fff;
+  --color-border: #2a3942;
+  --color-text: #e9edef;
+  --color-muted: #8696a0;
+  --radius-main: 16px;
+  --radius-bubble: 18px 18px 4px 18px;
+  --shadow-elevate: 0 2px 8px rgba(0,0,0,0.08);
+  --font-main: 'Segoe UI', 'Roboto', 'Helvetica Neue', Arial, sans-serif;
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --avatar-size: 40px;
+}
+
+body {
+  background: var(--color-bg);
+  font-family: var(--font-main);
+  color: var(--color-text);
+  margin: 0;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  display: flex;
+  flex: 1 1 auto;
+  background: var(--color-main);
+  box-shadow: var(--shadow-elevate);
+  border-radius: var(--radius-main);
+  margin: var(--spacing-md);
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .app-main {
+    margin: 0;
+    border-radius: 0;
+  }
+}

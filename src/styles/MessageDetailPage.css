@@ -1,0 +1,15 @@
+/* MessageDetailPage.css - minimalist, WhatsApp-inspired */
+.message-detail-container {
+  background: var(--color-main);
+  border-radius: var(--radius-main);
+  box-shadow: var(--shadow-elevate);
+  padding: var(--spacing-lg);
+  margin: var(--spacing-md) auto;
+  max-width: 600px;
+  color: var(--color-text);
+}
+.message-detail-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: var(--spacing-md);
+}

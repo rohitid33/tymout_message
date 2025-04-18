@@ -1,0 +1,135 @@
+/**
+ * Tymout Messaging App Styles
+ * 
+ * Main application styles with enhanced navigation for testing
+ * the messaging pages functionality.
+ */
+
+.app-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.app-header {
+  padding: 0.5rem 1rem;
+  background-color: #2D3748;
+  color: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.header-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.app-header h1 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.tab-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  width: 100%;
+  padding-bottom: 0.5rem;
+}
+
+.tab-button {
+  padding: 0.5rem 1rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tab-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.tab-button.active {
+  background-color: #4299E1;
+  color: white;
+}
+
+/* Special styling for the Message Pages button */
+.tab-button.message-pages-tab {
+  background-color: #38B2AC;
+  font-weight: 500;
+  position: relative;
+  animation: subtle-pulse 2s infinite;
+}
+
+.tab-button.message-pages-tab:hover {
+  background-color: #319795;
+}
+
+.tab-button.message-pages-tab.active {
+  background-color: #2C7A7B;
+  box-shadow: 0 0 0 2px rgba(56, 178, 172, 0.5);
+}
+
+.pulse-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: #F6AD55;
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  animation: pulse 1.5s infinite;
+}
+
+/* Animation for the Message Pages button */
+@keyframes subtle-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.03); }
+  100% { transform: scale(1); }
+}
+
+@keyframes pulse {
+  0% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.4); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+.app-content {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Add a special appearance to the test settings panel */
+#test-settings-panel.show {
+  max-height: 500px !important;
+  padding: 16px !important;
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .header-content {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .app-header h1 {
+    margin: 0;
+  }
+  
+  .tab-navigation {
+    width: auto;
+    padding-bottom: 0;
+  }
+}

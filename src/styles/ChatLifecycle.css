@@ -1,0 +1,22 @@
+/* ChatLifecycle.css - minimalist, WhatsApp-inspired */
+.lifecycle-container {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  padding: var(--spacing-md);
+  background: var(--color-main);
+  border-radius: var(--radius-main);
+}
+.lifecycle-banner {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background: var(--color-sidebar);
+  color: var(--color-accent);
+  border-radius: var(--radius-main);
+  font-size: 1rem;
+  text-align: center;
+}
+.lifecycle-controls {
+  display: flex;
+  gap: var(--spacing-sm);
+  justify-content: flex-end;
+}

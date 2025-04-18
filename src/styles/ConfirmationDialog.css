@@ -1,0 +1,30 @@
+/* ConfirmationDialog.css - WhatsApp-inspired, minimalist */
+.confirmation-dialog {
+  background: var(--color-main);
+  border-radius: var(--radius-main);
+  box-shadow: var(--shadow-elevate);
+  padding: var(--spacing-lg);
+  color: var(--color-text);
+  max-width: 340px;
+  margin: auto;
+}
+.confirmation-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+.confirmation-btn {
+  border: none;
+  background: var(--color-accent);
+  color: var(--color-accent-fg);
+  border-radius: var(--radius-main);
+  padding: var(--spacing-sm) var(--spacing-lg);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.confirmation-btn.cancel {
+  background: var(--color-sidebar);
+  color: var(--color-muted);
+}

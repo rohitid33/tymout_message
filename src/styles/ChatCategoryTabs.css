@@ -1,0 +1,23 @@
+/* ChatCategoryTabs.css - WhatsApp-inspired, minimalist tab bar */
+.tabs {
+  display: flex;
+  background: var(--color-sidebar);
+  border-bottom: 1px solid var(--color-border);
+  gap: var(--spacing-md);
+}
+.tab {
+  flex: 1 1 0;
+  text-align: center;
+  padding: var(--spacing-sm) 0;
+  color: var(--color-muted);
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  background: none;
+  transition: color 0.2s;
+}
+.tab.active {
+  color: var(--color-accent);
+  border-bottom: 2px solid var(--color-accent);
+  background: var(--color-main);
+}

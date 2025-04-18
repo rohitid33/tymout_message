@@ -1,0 +1,443 @@
+/**
+ * Join Requests System Styles
+ * 
+ * Styles for the Join Request components following the Tymout platform
+ * design system with mobile-first approach.
+ */
+
+/* Variables from main.css - make sure to keep consistent */
+:root {
+  /* If these are already defined in main.css, this is just for reference */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  
+  --primary-color: #4a86e8;
+  --success-color: #34a853;
+  --danger-color: #ea4335;
+  --warning-color: #fbbc05;
+  --neutral-color: #5f6368;
+  
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+}
+
+/* Join Request List */
+.join-request-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+}
+
+.request-list-header {
+  display: flex;
+  flex-direction: column;
+  padding: var(--spacing-md);
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.request-list-header h3 {
+  margin: 0 0 var(--spacing-md) 0;
+  font-size: var(--font-size-lg);
+}
+
+.request-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-xs);
+}
+
+.filter-button {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background-color: transparent;
+  border: 1px solid #dadce0;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-size: var(--font-size-sm);
+  transition: all 0.2s ease;
+}
+
+.filter-button.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.filter-button:hover:not(.active) {
+  background-color: #f1f3f4;
+}
+
+.filter-button .count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 var(--spacing-xs);
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  font-size: 0.75rem;
+  margin-left: var(--spacing-xs);
+}
+
+.filter-button.active .count {
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.loading-state, .empty-state {
+  padding: var(--spacing-xl);
+  text-align: center;
+  color: var(--neutral-color);
+}
+
+/* Join Request Item */
+.join-request-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.join-request-item:last-child {
+  border-bottom: none;
+}
+
+.request-header {
+  display: flex;
+  align-items: center;
+  padding: var(--spacing-md);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.request-header:hover {
+  background-color: #f8f9fa;
+}
+
+.request-meta {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: var(--spacing-md);
+  gap: var(--spacing-md);
+}
+
+.request-date {
+  color: var(--neutral-color);
+  font-size: var(--font-size-sm);
+}
+
+.status-badge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--border-radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+}
+
+.status-pending {
+  background-color: #fff8e1;
+  color: #f9a825;
+}
+
+.status-approved {
+  background-color: #e8f5e9;
+  color: var(--success-color);
+}
+
+.status-rejected {
+  background-color: #ffebee;
+  color: var(--danger-color);
+}
+
+.expand-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: var(--font-size-md);
+  color: var(--neutral-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.request-details {
+  padding: var(--spacing-md);
+  background-color: #f8f9fa;
+  border-top: 1px solid #e0e0e0;
+}
+
+.request-message {
+  margin-bottom: var(--spacing-md);
+}
+
+.request-message h4 {
+  margin: 0 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-md);
+}
+
+.request-message p {
+  margin: 0;
+  padding: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  border: 1px solid #e0e0e0;
+}
+
+.request-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.action-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-sm);
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.action-button.accept {
+  background-color: var(--success-color);
+  color: white;
+}
+
+.action-button.accept:hover {
+  background-color: #2e9549;
+}
+
+.action-button.reject {
+  background-color: white;
+  color: var(--danger-color);
+  border: 1px solid var(--danger-color);
+}
+
+.action-button.reject:hover {
+  background-color: #ffebee;
+}
+
+.action-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* User Profile Preview */
+.user-profile-preview {
+  display: flex;
+  padding: var(--spacing-md);
+  background-color: white;
+  border-radius: var(--border-radius-md);
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-profile-preview:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.user-profile-preview-compact {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.user-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-initials {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.user-info {
+  margin-left: var(--spacing-md);
+  flex-grow: 1;
+}
+
+.user-name {
+  margin: 0;
+  font-size: var(--font-size-md);
+  font-weight: 500;
+}
+
+.user-role {
+  font-size: var(--font-size-sm);
+  color: var(--neutral-color);
+  margin-top: var(--spacing-xs);
+}
+
+.user-bio {
+  margin: var(--spacing-sm) 0;
+  font-size: var(--font-size-sm);
+}
+
+.user-meta {
+  font-size: var(--font-size-sm);
+  color: var(--neutral-color);
+}
+
+/* Request Conversation */
+.request-conversation-container h4 {
+  margin: var(--spacing-md) 0 var(--spacing-sm) 0;
+  font-size: var(--font-size-md);
+}
+
+.request-conversation {
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-md);
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.conversation-messages {
+  padding: var(--spacing-md);
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.conversation-message {
+  display: flex;
+  flex-direction: column;
+  max-width: 80%;
+}
+
+.conversation-message.current-user {
+  align-self: flex-end;
+}
+
+.message-content {
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--border-radius-md);
+  background-color: #f1f3f4;
+  margin-top: var(--spacing-xs);
+}
+
+.conversation-message.current-user .message-content {
+  background-color: #e3f2fd;
+}
+
+.system-message .message-content {
+  background-color: #fff8e1;
+  font-style: italic;
+}
+
+.system-notification {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.system-icon {
+  color: var(--warning-color);
+}
+
+.message-time {
+  text-align: right;
+  font-size: 0.75rem;
+  color: var(--neutral-color);
+  margin-top: var(--spacing-xs);
+}
+
+.conversation-reply-form {
+  display: flex;
+  padding: var(--spacing-md);
+  border-top: 1px solid #e0e0e0;
+  gap: var(--spacing-sm);
+}
+
+.reply-input {
+  flex-grow: 1;
+  padding: var(--spacing-sm);
+  border: 1px solid #e0e0e0;
+  border-radius: var(--border-radius-sm);
+  resize: none;
+  font-family: inherit;
+  font-size: var(--font-size-md);
+}
+
+.reply-button {
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.reply-button:hover {
+  background-color: #3b78e7;
+}
+
+.reply-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .request-meta {
+    flex-direction: column;
+    align-items: flex-end;
+    gap: var(--spacing-xs);
+  }
+  
+  .conversation-message {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .request-filters {
+    justify-content: space-between;
+  }
+  
+  .filter-button {
+    flex-grow: 1;
+    text-align: center;
+  }
+  
+  .request-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .action-button {
+    width: 100%;
+  }
+}
